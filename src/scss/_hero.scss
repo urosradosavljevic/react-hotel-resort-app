@@ -1,0 +1,51 @@
+.defaultHero,
+.roomHero{
+    position: relative;
+    min-height: calc(100vh);
+    background: url('../img/defaultBackground.jpeg') ;
+    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+.roomHero{
+    background-image: url('../img/room-2.jpeg');
+    min-height: 60vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header .overlay{
+    position: absolute;
+    margin: 0;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.banner{
+    display: flex;
+    flex-direction: column;
+    font-family: $classy-font;
+    color: white;
+    margin: 0;
+    z-index: 1;
+    h1{
+        text-transform: capitalize;
+        font-size: 6em;
+        margin: 0;
+        text-align: center;
+    }
+    p{
+        font-size: 2.2em;
+        margin-top: 0.5em;
+        text-align: center;
+    }
+
+
+}

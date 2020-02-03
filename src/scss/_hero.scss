@@ -9,6 +9,7 @@
     background-size: cover;
     align-items: center;
     justify-content: center;
+    margin-bottom: 6em;
 }
 .roomHero{
     background-image: url('../img/room-2.jpeg');
@@ -25,7 +26,7 @@ header .overlay{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.192);
 }
 
 .banner{
@@ -45,6 +46,10 @@ header .overlay{
         font-size: 2.2em;
         margin-top: 0.5em;
         text-align: center;
+    }
+
+    a {
+      margin-top: 2em;
     }
 
 

@@ -1,0 +1,12 @@
+.rooms-filter{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    column-gap: .5em;
+    width: 90vw;
+    margin:2em auto;
+}
+.rooms-filter > * {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1em;
+}

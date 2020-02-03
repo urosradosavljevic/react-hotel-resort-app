@@ -1,0 +1,55 @@
+.rooms-list-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+    column-gap: 2em;
+    row-gap: 2.5em;
+    width: 90vw;
+    margin: 0 auto;
+}
+.room-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.137);
+}
+.room-item-image{
+    width: 100%;
+    height: auto;
+}
+.room-item-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: .5em 1em;
+    a{
+        text-decoration: none;
+    }
+
+    .room-item-title{
+        font-size:2em;
+        text-transform: capitalize;
+        color: black;
+    }
+
+    .room-item-price{
+        font-size: 2em;
+        color:red;
+        font-weight: 600;
+    }   
+    
+}
+
+    .room-item-description {
+        text-align: left;
+        margin: 0 .7em .5em .7em;
+
+        span{
+        font-size: 0.6em;
+        font-weight: 600;
+        }
+        .room-item-type{
+            margin-right: 1em;
+            padding-right: 1em;
+            border-right: 1px solid grey;
+        }
+    }

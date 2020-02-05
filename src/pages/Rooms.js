@@ -5,9 +5,9 @@ import { RoomsContainer } from "../components/RoomsContainer";
 export const Rooms = () => {
 
   return (
-    <div>
+    <>
       <Hero hero="roomHero"/>
       <RoomsContainer/>
-    </div>
+    </>
   );
 };

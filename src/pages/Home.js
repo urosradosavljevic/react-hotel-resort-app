@@ -6,7 +6,7 @@ import {FeaturedRooms} from '../components/FeaturedRooms'
 
 export const Home = () => {
   return (
-    <div>
+    <>
       <Hero>
         <Banner title="pleasant view" subtitle="delux rooms starting at $4">
           {/* <Link to="/rooms" className="btn-primary">
@@ -16,6 +16,6 @@ export const Home = () => {
       </Hero>
       <Services/>
       <FeaturedRooms/>
-    </div> 
+    </> 
   );
 };

@@ -11,3 +11,7 @@ export const getFormatedPrice = value => {
   export const getUnique = (items,value) => {
     return [...new Set(items.map(item => item[value]))]
   }
+  
+  export const getMaxValue=(items, value) => {   
+    return Math.max(...items.map(item => item[value]));
+  }

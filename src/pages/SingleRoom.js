@@ -6,8 +6,7 @@ import { StyledHero } from "../components/StyledHero";
 import { Banner } from "../components/Banner";
 
 export const SingleRoom = props => {
-  // eslint-disable-next-line no-unused-vars
-  const [slug, setSlug] = useState(props.match.params.slug);
+  const [slug] = useState(props.match.params.slug);
 
   const { getRoom } = useRoomData();
   const room = getRoom(slug);
@@ -17,12 +16,12 @@ export const SingleRoom = props => {
       <div className="erorr-wrapper">
         <h2>No such room could be found...</h2>
         <Link className="default-anchor-dark" to={`/rooms/`}>
-          <span>Go back to rooms</span>
+          <span>Go to Rooms Page</span>
         </Link>
       </div>
     );
   }
-  console.log(room);
+  
   const {
     name,
     price,
@@ -42,7 +41,7 @@ export const SingleRoom = props => {
         <div className="overlay"></div>
         <Banner title={name}>
           <Link className="default-anchor" to="/rooms/">
-            <span>Back to Rooms Page</span>
+            <span>Go to Rooms Page</span>
           </Link>
         </Banner>
       </StyledHero>

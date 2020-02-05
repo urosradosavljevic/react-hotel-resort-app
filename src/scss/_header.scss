@@ -36,10 +36,15 @@
     display: flex;
     border: none;
     background-color: transparent;
+    outline: none;
     cursor: pointer;
 
     @include mq("768px") {
       display: none !important;
+    }
+
+    svg{
+      fill: white;
     }
   }
 }

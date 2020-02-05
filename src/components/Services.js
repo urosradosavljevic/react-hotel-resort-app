@@ -1,5 +1,5 @@
 import React from "react";
-// eslint-disable-next-line no-unused-vars
+
 import { FaCocktail, FaHiking, FaGuitar, FaLuggageCart } from "react-icons/fa";
 
 export const Services = () => {
@@ -33,7 +33,7 @@ export const Services = () => {
           <span>
             <FaLuggageCart />
           </span>
-          <h4>Free transportation from airport</h4>
+          <h4>Free transportation</h4>
           <p>
             Aenean suscipit suscipit tortor ac porttitor. Phasellus ullamcorper
             massa non ante egestas sagittis. Pellentesque id auctor sem, sed

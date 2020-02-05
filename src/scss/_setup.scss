@@ -12,8 +12,10 @@ html{
     font-family: inherit;
 }
 
-main{
-    // margin-top:80px;
+.loading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 

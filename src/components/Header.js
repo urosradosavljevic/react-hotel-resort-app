@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// eslint-disable-next-line no-unused-vars
 import { Link } from "react-router-dom";
 
 import { MdMenu } from "react-icons/md";
@@ -10,6 +9,8 @@ export const Header = () => {
 
   const handleToggleMenu = () => setIsOpen(!isOpen);
 
+
+  // show-small-nav
   return (
     <>
       <header className="header-wrapper">
@@ -21,7 +22,7 @@ export const Header = () => {
           </div>
           <nav className="header-nav-big">
             <ul>
-              <li>
+              <li >
                 <Link to="/">Home</Link>
               </li>
               <li>
@@ -40,10 +41,10 @@ export const Header = () => {
         <nav className={isOpen ? "header-nav-small show-small-nav" : "header-nav-small"}>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link onClick={()=>setIsOpen(!isOpen)}  to="/">Home</Link>
             </li>
             <li>
-              <Link to="/rooms">Rooms</Link>
+              <Link onClick={()=>setIsOpen(!isOpen)} to="/rooms">Rooms</Link>
             </li>
           </ul>
         </nav>

@@ -1,97 +1,21 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, createContext, useState } from "react";
-import items from "../data/data";
+import {useRooms} from '../hooks'
 
 export const RoomContext = createContext();
 
 export const RoomProvider = ({ children }) => {
-  console.log("context made");
-  const [rooms, setRooms] = useState([]);
-  // eslint-disable-next-line no-unused-vars
+  const {rooms} = useRooms([]);
   const [featuredRooms, setFeaturedRooms] = useState([]);
-  // eslint-disable-next-line no-unused-vars
   const [sortedRooms, setSortedRooms] = useState([...rooms]);
   const [loading, setLoading] = useState(true);
   const [roomType, setRoomType] = useState("all");
   const [guests, setGuests] = useState(1);
-  // // eslint-disable-next-line no-unused-vars
-  // const [maxPrice, setMaxPrice] = useState(1000);
-  // // eslint-disable-next-line no-unused-vars
-  // const [minSize, setMinSize] = useState(0);
-  // // eslint-disable-next-line no-unused-vars
-  // const [maxSize, setMaxSize] = useState(1000);
-  // // eslint-disable-next-line no-unused-vars
-  // const [breakfastFlag, setBreakfastFlag] = useState(false);
-  // // eslint-disable-next-line no-unused-vars
-  // const [petsFlag, setPetsFlag] = useState(false);
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const filterRooms = () => {
-    console.log("not filtered", rooms);
-    switch (name) {
-      case ''
-    }
-    const filtered = rooms.filter(room => roomType === room.type);
-    setSortedRooms(filtered);
-  };
-
-  const handleFilterChange = event => {
-    const name = event.target.name;
-    // eslint-disable-next-line no-undef
-    const value =
-      event.target.type === "checkbox"
-        ? event.target.checked
-        : event.target.value;
-    console.log(name, name === "type", event.target.value);
-    console.log(roomType);
-    setRoomType(value);
-    switch (name) {
-      // case "type":
-      //   setRoomType(value);
-      //   console.log("room type", roomType, "seting:", setRoomType(value));
-      //   filterRooms();
-      //   break;
-      // case 'guests':
-      //   setGuests(parseFloat(value));
-      //   console.log('guests from input set:',value)
-      //   filterRooms();
-      //   console.log('guests after filtering:',value)
-      //   break;
-      // case 'price':
-      //   setMaxPrice(value);
-      //   filterRooms();
-      //   break;
-      // case 'size':
-      //   setMaxSize(value);
-      //   filterRooms();
-      //   break;
-      // case 'breakfast':
-      //   setBreakfastFlag(value);
-      //   filterRooms();
-      //   break;
-      // case 'pets':
-      //   setPetsFlag(value);
-      //   filterRooms();
-      // break;
-      default:
-        console.log("Switch defai;t");
-    }
-  };
-
-  const formatData = items => {
-    // getData
-    // setLoading(true)
-    const tempItems = items.map(item => {
-      const id = item.sys.id;
-      const images = item.fields.images.map(image => image.fields.file.url);
-      const room = {
-        id,
-        ...item.fields,
-        images
-      };
-      return room;
-    });
-    return tempItems;
-  };
+  const [maxPrice, setMaxPrice] = useState(600);
+  const [minSize, setMinSize] = useState(0);
+  const [maxSize, setMaxSize] = useState(93);
+  const [breakfastFlag, setBreakfastFlag] = useState(false);
+  const [petsFlag, setPetsFlag] = useState(false);
 
   const getRoom = slug => {
     const tempRooms = [...rooms];
@@ -100,45 +24,70 @@ export const RoomProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const formatedRooms = formatData(items);
-    // eslint-disable-next-line no-unused-vars
-    const featured = formatedRooms.filter(room => room.featured);
-    console.log("useEffect run");
-
-    if (JSON.stringify(rooms) !== JSON.stringify(formatedRooms)) {
-      setRooms(formatedRooms);
-      // setFeaturedRooms(featured);
+    setLoading(true);
+    
+    const featured = rooms.filter(room => room.featured);
+    
+    if (JSON.stringify(featuredRooms) !== JSON.stringify(featured)) {
+      setFeaturedRooms(featured);
       setLoading(false);
-      console.log("ulazio");
     }
-  }, [featuredRooms, rooms, loading, sortedRooms]);
-
+  },[rooms]);
+  
   useEffect(() => {
-    let tempRooms = setSortedRooms(rooms);
+    let tempRooms = rooms;
     if (roomType !== "all") {
-      filterRooms();
+      tempRooms = tempRooms.filter(room => roomType === room.type);
     }
-  }, [filterRooms, roomType, rooms, sortedRooms]);
-
-  useEffect(() => {
-    if (roomType === "all") {
-      setSortedRooms(rooms);
-    } else if(!sortedRooms.every(room => room.type === roomType)) {
-      filterRooms();
+    if (guests !== 1) {
+      tempRooms = tempRooms.filter(room => guests <= room.capacity);
     }
-  }, [filterRooms, roomType, rooms, sortedRooms]);
+    if (maxPrice !== 600) {
+      tempRooms = tempRooms.filter(room => maxPrice >= room.price);
+    }
+    if (maxSize !== 93) {
+      tempRooms = tempRooms.filter(
+        room => maxSize >= room.size && minSize <= room.size
+      );
+    }
+    if (petsFlag) {
+      tempRooms = tempRooms.filter(room => room.pets);
+    }
+    if (breakfastFlag) {
+      tempRooms = tempRooms.filter(room => room.breakfast);
+    }
+    if (JSON.stringify(tempRooms) !== JSON.stringify(sortedRooms)) {
+      setSortedRooms(tempRooms);
+    }
+  }, [
+    guests,
+    roomType,
+    rooms,
+    sortedRooms,
+    maxPrice,
+    maxSize,
+    minSize,
+    petsFlag,
+    breakfastFlag
+  ]);
 
   return (
     <RoomContext.Provider
       value={{
-        handleFilterChange,
         rooms,
         guests,
-        // maxPrice,
-        // minSize,
-        // maxSize,
-        // breakfastFlag,
-        // petsFlag,
+        setGuests,
+        setRoomType,
+        maxPrice,
+        setMaxPrice,
+        minSize,
+        setMinSize,
+        maxSize,
+        setMaxSize,
+        breakfastFlag,
+        setBreakfastFlag,
+        petsFlag,
+        setPetsFlag,
         featuredRooms,
         sortedRooms,
         getRoom,

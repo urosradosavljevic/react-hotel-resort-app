@@ -4,6 +4,7 @@
   * React Router
   * Product filtering
   * SCSS
+  * Responsive
 * **Technologies used:** 
   * ReactJS 
   * SCSS

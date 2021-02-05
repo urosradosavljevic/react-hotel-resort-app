@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { useRoomData } from "../context/room-context";
-import defaultRoomImg from "../img/room-1.jpeg";
 import { Link } from "react-router-dom";
-import { RoomHero } from "./single-room/components/RoomHero";
-import RoomImages from "./single-room/components/RoomImages";
-import RoomInfo from "./single-room/components/RoomInfo";
-import RoomDetails from "./single-room/components/RoomDetails";
 
-export const SingleRoom = (props) => {
+import { useRoomData } from "../../context/room-context";
+
+import { RoomHero } from "../single-room/components/RoomHero";
+import RoomImages from "../single-room/components/RoomImages";
+import RoomDetails from "../single-room/components/RoomDetails";
+
+const SingleRoom = (props) => {
   const [slug] = useState(props.match.params.slug);
 
   const { getRoom } = useRoomData();
@@ -39,3 +39,5 @@ export const SingleRoom = (props) => {
     </>
   );
 };
+
+export default SingleRoom;

@@ -10,22 +10,21 @@ export const RoomListItem = ({
   featuredImage,
   price,
   type,
-  size
+  size,
 }) => {
   return (
     <article className="room-item">
-        <Link to={`/rooms/${slug}`}>
-      <img
-        className="room-item-image"
-        src={featuredImage || defaultImg}
-        alt={`Room ${name}`}
-      />
-        </Link>
+      <Link to={`/rooms/${slug}`}>
+        <img
+          className="room-item-image"
+          src={featuredImage || defaultImg}
+          alt={`Room ${name}`}
+        />
+      </Link>
       <div className="room-item-body">
         <div className="room-item-header">
-        <Link to={`/rooms/${slug}`}>
-
-          <h4 className="room-item-title">{name}</h4>
+          <Link to={`/rooms/${slug}`}>
+            <h4 className="room-item-title">{name}</h4>
           </Link>
           <span className="room-item-price">{getFormatedPrice(price)}</span>
         </div>
@@ -42,9 +41,9 @@ export const RoomListItem = ({
 // #efeae6
 RoomListItem.propTypes = {
   name: PropTypes.string.isRequired,
-  slug: PropTypes.string,
-  price: PropTypes.number,
-  type: PropTypes.string,
-  size: PropTypes.number,
-  featuredImage: PropTypes.string
+  slug: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired,
+  featuredImage: PropTypes.string.isRequired,
 };

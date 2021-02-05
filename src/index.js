@@ -5,10 +5,10 @@ import App from "./App";
 import { RoomProvider } from "./context/room-context";
 
 render(
-  <RoomProvider>
-    <Router>
+  <Router>
+    <RoomProvider>
       <App />
-    </Router>
-  </RoomProvider>,
+    </RoomProvider>
+  </Router>,
   document.getElementById("root")
 );

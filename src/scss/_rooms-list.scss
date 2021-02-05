@@ -9,7 +9,7 @@
 .room-item {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.137);
 }
 .room-item-image {
@@ -42,7 +42,7 @@
   text-align: left;
   margin: 0 1em 1em 1em;
   font-size: 1em;
-  
+
   span {
     font-weight: 600;
   }

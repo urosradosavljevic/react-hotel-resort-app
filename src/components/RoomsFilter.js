@@ -1,10 +1,9 @@
 import React from "react";
-import { useRoomData } from "../context/room-context";
+import { useRoomFilter } from "../context/room-filter-context";
 import { getUnique } from "../helpers";
 import { getFormatedPrice, getMaxValue } from "../helpers";
 
-export const RoomsFilter = props => {
-    
+export const RoomsFilter = (props) => {
   const {
     roomType,
     setRoomType,
@@ -19,8 +18,8 @@ export const RoomsFilter = props => {
     breakfastFlag,
     setBreakfastFlag,
     petsFlag,
-    setPetsFlag
-  } = useRoomData();
+    setPetsFlag,
+  } = useRoomFilter();
 
   const uniqueTypes = ["all", ...getUnique(props.rooms, "type")];
   const uniqueCapacity = [...getUnique(props.rooms, "capacity")];
@@ -33,7 +32,7 @@ export const RoomsFilter = props => {
         <span className="room-filter-title">Room type</span>
         <select
           value={roomType}
-          onChange={event => setRoomType(event.target.value)}
+          onChange={(event) => setRoomType(event.target.value)}
           name="type"
           id="room-filter-type"
         >
@@ -45,10 +44,10 @@ export const RoomsFilter = props => {
         </select>
       </label>
       <label htmlFor="room-filter-guests" className="room-guests-label">
-      <span className="room-filter-title">Guests</span>
+        <span className="room-filter-title">Guests</span>
         <select
           value={guests}
-          onChange={event => setGuests(event.target.value)}
+          onChange={(event) => setGuests(event.target.value)}
           name="guests"
           id="room-filter-guests"
         >
@@ -60,11 +59,11 @@ export const RoomsFilter = props => {
         </select>
       </label>
       <label htmlFor="room-filter-price" className="room-price-label">
-      <span className="room-filter-title">Room Price{" "}</span>
+        <span className="room-filter-title">Room Price </span>
         <span className="room-price-span">{getFormatedPrice(maxPrice)}</span>
         <input
           value={maxPrice}
-          onChange={event => setMaxPrice(parseInt(event.target.value))}
+          onChange={(event) => setMaxPrice(parseInt(event.target.value))}
           min={0}
           max={maxPriceValue}
           name="price"
@@ -73,26 +72,27 @@ export const RoomsFilter = props => {
         />
       </label>
       <label htmlFor="room-filter-size" className="room-size-label">
-      <span className="room-filter-title">Room size</span>
-      <div className="room-size-input">
-        <input
-          value={minSize}
-          onChange={event => setMinSize(parseInt(event.target.value))}
-          min={0}
-          max={maxSizeValue}
-          name="size"
-          type="number"
-          id="room-filter-size"
-        />
-        <input
-          value={maxSize}
-          onChange={event => setMaxSize(parseInt(event.target.value))}
-          min={0}
-          max={maxSizeValue}
-          name="size"
-          type="number"
-          id="room-filter-size"
-        /></div>
+        <span className="room-filter-title">Room size</span>
+        <div className="room-size-input">
+          <input
+            value={minSize}
+            onChange={(event) => setMinSize(parseInt(event.target.value))}
+            min={0}
+            max={maxSizeValue}
+            name="size"
+            type="number"
+            id="room-filter-size"
+          />
+          <input
+            value={maxSize}
+            onChange={(event) => setMaxSize(parseInt(event.target.value))}
+            min={0}
+            max={maxSizeValue}
+            name="size"
+            type="number"
+            id="room-filter-size"
+          />
+        </div>
       </label>
       <label htmlFor="room-filter-breakfast" className="room-breakfast-label">
         <input
@@ -102,7 +102,7 @@ export const RoomsFilter = props => {
           type="checkbox"
           id="room-filter-breakfast"
         />
-      <span className="room-filter-title">Breakfast</span>
+        <span className="room-filter-title">Breakfast</span>
       </label>
       <label htmlFor="room-filter-pets" className="room-pets-label">
         <input
@@ -112,7 +112,7 @@ export const RoomsFilter = props => {
           type="checkbox"
           id="room-filter-pets"
         />
-      <span className="room-filter-title">Pets</span>
+        <span className="room-filter-title">Pets</span>
       </label>
     </div>
   );

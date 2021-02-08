@@ -1,4 +1,4 @@
-import { client } from ".";
+import { client } from "api";
 
 export const getRooms = () =>
   client.getEntries({

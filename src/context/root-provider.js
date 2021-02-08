@@ -1,6 +1,7 @@
 import React from "react";
-import { RoomDataProvider } from "./room-context";
-import { RoomFilterProvider } from "./room-filter-context";
+
+import { RoomDataProvider } from "context/room-context";
+import { RoomFilterProvider } from "context/room-filter-context";
 
 export const RootContextProvider = ({ children }) => {
   return (

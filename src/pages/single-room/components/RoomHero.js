@@ -1,9 +1,11 @@
 import React from "react";
-import defaultRoomImg from "../../../img/room-1.jpeg";
-import PropTypes from "prop-types";
-import { StyledHero } from "../../../components/StyledHero";
-import { Banner } from "../../../components/layout/Banner";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
+import defaultRoomImg from "img/room-1.jpeg";
+
+import { StyledHero } from "components/StyledHero";
+import { Banner } from "components/layout/Banner";
 
 const RoomHero = (props) => {
   return (

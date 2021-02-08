@@ -1,8 +1,9 @@
 import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import App from "./App";
-import RootContextProvider from "./context/root-provider";
+
+import App from "App";
+import RootContextProvider from "context/root-provider";
 
 render(
   <Router>

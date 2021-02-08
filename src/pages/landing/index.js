@@ -1,8 +1,8 @@
 import React from "react";
-import { Hero } from "../../components/layout/Hero";
-import { Banner } from "../../components/layout/Banner";
-import { Services } from "./components/Services";
-import { FeaturedRooms } from "./components/FeaturedRooms";
+import { Hero } from "components/layout/Hero";
+import { Banner } from "components/layout/Banner";
+import { Services } from "pages/landing/components/Services";
+import { FeaturedRooms } from "pages/landing/components/FeaturedRooms";
 
 const Home = () => {
   return (

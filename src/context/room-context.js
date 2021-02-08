@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, createContext, useState } from "react";
-import { useRooms } from "../hooks";
+import { useRooms } from "hooks";
 
-export const RoomDataContext = createContext();
+export const RoomDataContext = createContext({});
 
 export const RoomDataProvider = ({ children }) => {
-  const { rooms } = useRooms([]);
+  const { rooms } = useRooms();
   const [featuredRooms, setFeaturedRooms] = useState([]);
   const [loading, setLoading] = useState(true);
 

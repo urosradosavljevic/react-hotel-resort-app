@@ -1,3 +1,3 @@
-import { useRooms } from "./room";
+import { useRooms } from "hooks/room";
 
 export { useRooms };

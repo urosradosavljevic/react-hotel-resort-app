@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { MdMenu } from "react-icons/md";
-import logo from "../../img/logo1.svg";
+import logo from "img/logo1.svg";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

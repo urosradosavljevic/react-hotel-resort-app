@@ -1,13 +1,14 @@
 import React from "react";
-import "./App.scss";
-
-import LandingPage from "./pages/landing";
-import RoomsPage from "./pages/rooms";
-import { Error } from "./pages/Error";
-import SingleRoom from "./pages/single-room";
-
 import { Route, Switch } from "react-router-dom";
-import { Header } from "./components/layout/Header";
+
+import LandingPage from "pages/landing";
+import RoomsPage from "pages/rooms";
+import { Error } from "pages/Error";
+import SingleRoom from "pages/single-room";
+
+import { Header } from "components/layout/Header";
+
+import "./App.scss";
 
 function App() {
   return (

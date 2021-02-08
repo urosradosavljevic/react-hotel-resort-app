@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
-import { getRooms } from "./room";
+
+import { getRooms } from "api/room";
 
 export const client = createClient({
   space: process.env.REACT_APP_SPACE,

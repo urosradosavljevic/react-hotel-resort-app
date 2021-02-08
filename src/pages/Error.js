@@ -1,7 +1,8 @@
 import React from "react";
-import { Hero } from "../components/layout/Hero";
-import { Banner } from "../components/layout/Banner";
 import { Link } from "react-router-dom";
+
+import { Hero } from "components/layout/Hero";
+import { Banner } from "components/layout/Banner";
 
 export const Error = () => {
   return (

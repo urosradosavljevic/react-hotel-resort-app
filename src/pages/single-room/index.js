@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { useRoomData } from "../../context/room-context";
+import { useRoomData } from "context/room-context";
 
-import { RoomHero } from "../single-room/components/RoomHero";
-import RoomImages from "../single-room/components/RoomImages";
-import RoomDetails from "../single-room/components/RoomDetails";
+import { RoomHero } from "pages/single-room/components/RoomHero";
+import RoomImages from "pages/single-room/components/RoomImages";
+import RoomDetails from "pages/single-room/components/RoomDetails";
 
 const SingleRoom = (props) => {
   const [slug] = useState(props.match.params.slug);

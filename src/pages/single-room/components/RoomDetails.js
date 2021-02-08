@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import RoomInfo from "./RoomInfo";
+
+import RoomInfo from "pages/single-room/components/RoomInfo";
 
 const RoomDetails = ({ room }) => {
   const { description, price, size, capacity, pets, breakfast, extras } = room;

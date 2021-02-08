@@ -1,6 +1,6 @@
 import React from "react";
 
-import { RoomListItem } from "./RoomListItem";
+import { RoomListItem } from "pages/rooms/components/RoomListItem";
 
 export const RoomsList = ({ rooms }) => {
   if (rooms.length === 0) {

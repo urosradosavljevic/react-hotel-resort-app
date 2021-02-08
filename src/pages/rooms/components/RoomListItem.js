@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import defaultImg from "../../../img/room-1.jpeg";
-import { getFormatedPrice } from "../../../helpers";
+import defaultImg from "img/room-1.jpeg";
+import { getFormatedPrice } from "helpers";
 
 export const RoomListItem = ({
   name,

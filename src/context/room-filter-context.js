@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, createContext, useState } from "react";
-import { useRooms } from "../hooks";
 
-export const RoomFilterContext = createContext();
+import { useRooms } from "hooks";
+
+export const RoomFilterContext = createContext({});
 
 export const RoomFilterProvider = ({ children }) => {
-  const { rooms } = useRooms([]);
+  const { rooms } = useRooms();
   const [sortedRooms, setSortedRooms] = useState([...rooms]);
   const [roomType, setRoomType] = useState("all");
   const [guests, setGuests] = useState(1);

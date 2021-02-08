@@ -1,8 +1,8 @@
 import React from "react";
+
 import { RoomListItem } from "./RoomListItem";
 
 export const RoomsList = ({ rooms }) => {
-  
   if (rooms.length === 0) {
     return (
       <div className="empty-search">
@@ -12,7 +12,7 @@ export const RoomsList = ({ rooms }) => {
   }
   return (
     <div className="rooms-list-wrapper">
-      {rooms.map(room => (
+      {rooms.map((room) => (
         <RoomListItem
           key={room.id}
           name={room.name}

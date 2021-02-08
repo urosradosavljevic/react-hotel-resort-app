@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import defaultImg from "../img/room-1.jpeg";
 import PropTypes from "prop-types";
+
+import { Link } from "react-router-dom";
+import defaultImg from "../../../img/room-1.jpeg";
 
 export const FeaturedRoom = ({ featuredRoom }) => {
   const { name, description, slug, images } = featuredRoom;

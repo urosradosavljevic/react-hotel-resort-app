@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { MdMenu } from "react-icons/md";
-import logo from "../img/logo1.svg";
+import logo from "../../img/logo1.svg";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => setIsOpen(!isOpen);
-
 
   // show-small-nav
   return (
@@ -22,7 +21,7 @@ export const Header = () => {
           </div>
           <nav className="header-nav-big">
             <ul>
-              <li >
+              <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
@@ -38,13 +37,21 @@ export const Header = () => {
             <MdMenu />
           </button>
         </div>
-        <nav className={isOpen ? "header-nav-small show-small-nav" : "header-nav-small"}>
+        <nav
+          className={
+            isOpen ? "header-nav-small show-small-nav" : "header-nav-small"
+          }
+        >
           <ul>
             <li>
-              <Link onClick={()=>setIsOpen(!isOpen)}  to="/">Home</Link>
+              <Link onClick={() => setIsOpen(!isOpen)} to="/">
+                Home
+              </Link>
             </li>
             <li>
-              <Link onClick={()=>setIsOpen(!isOpen)} to="/rooms">Rooms</Link>
+              <Link onClick={() => setIsOpen(!isOpen)} to="/rooms">
+                Rooms
+              </Link>
             </li>
           </ul>
         </nav>

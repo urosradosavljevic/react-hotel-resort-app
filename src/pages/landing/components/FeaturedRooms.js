@@ -1,6 +1,6 @@
 import React from "react";
-import { useRoomData } from "../context/room-context";
-import { Loading } from "./Loading";
+import { useRoomData } from "../../../context/room-context";
+import { Loading } from "../../../components/Loading";
 import { FeaturedRoom } from "./FeaturedRoom";
 
 export const FeaturedRooms = () => {

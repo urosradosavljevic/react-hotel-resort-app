@@ -1,7 +1,7 @@
 import React from "react";
-import { useRoomFilter } from "../context/room-filter-context";
-import { getUnique } from "../helpers";
-import { getFormatedPrice, getMaxValue } from "../helpers";
+
+import { useRoomFilter } from "../../../context/room-filter-context";
+import { getFormatedPrice, getMaxValue, getUnique } from "../../../helpers";
 
 export const RoomsFilter = (props) => {
   const {

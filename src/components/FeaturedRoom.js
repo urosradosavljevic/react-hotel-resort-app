@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import defaultImg from '../img/room-1.jpeg' 
-import PropTypes from 'prop-types'
+import defaultImg from "../img/room-1.jpeg";
+import PropTypes from "prop-types";
 
 export const FeaturedRoom = ({ featuredRoom }) => {
   const { name, description, slug, images } = featuredRoom;
-  
+
   return (
     <section className="featured-room">
       <img
@@ -24,11 +24,11 @@ export const FeaturedRoom = ({ featuredRoom }) => {
   );
 };
 // #efeae6
-FeaturedRoom.propTypes ={
+FeaturedRoom.propTypes = {
   featuredRoom: PropTypes.shape({
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     slug: PropTypes.string,
     images: PropTypes.arrayOf(PropTypes.string),
-  })
-}
+  }),
+};

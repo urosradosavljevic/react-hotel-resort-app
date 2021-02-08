@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getRooms } from "../api";
+import { formatRooms } from "../helpers/room";
 
 export const useRooms = () => {
   const [rooms, setRooms] = useState([]);
